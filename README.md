@@ -2,7 +2,7 @@
 
 **Author:**  
 **Varun Bhimani**  
-B.Tech Computer Science & Engineering  
+B.Tech, Computer Science & Engineering  
 Indian Institute of Technology, Roorkee(IIT Roorkee)
 
 ---
