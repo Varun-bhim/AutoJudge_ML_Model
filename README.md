@@ -3,7 +3,7 @@
 **Author:**  
 **Varun Bhimani**  
 B.Tech Computer Science & Engineering  
-Indian Institute of Technology (IIT) Roorkee  
+Indian Institute of Technology, Roorkee(IIT Roorkee)
 
 ---
 
@@ -98,17 +98,9 @@ The system uses:
 
 ## 📊 Model Performance
 
-### **Classification**
-- Handles all three classes (Easy / Medium / Hard)
-- Balanced predictions after calibration
-- Confusion matrix used for detailed evaluation
-
-### **Regression**
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- Gradient Boosting outperforms linear baseline
-
-*(Exact metrics depend on dataset split and distribution.)*
+- Classification Accuracy : 47%
+- Regression MAE : 1.7
+- Regression RMSE : 2.04
 
 ---
 
@@ -161,9 +153,8 @@ The application will be available at:
 
 ## ⚠️ Known Limitations
 
+- Dataset imbalance can influence classification performance. The dataset on which I trained the model consisted mainly Hard problems. Hence it sometimes mispredicts problems into their correct category.
 - Predictions rely solely on textual problem descriptions and do not use submission statistics or user feedback.
-- Ambiguous problems may be misclassified, especially between **Medium** and **Hard** categories.
-- Dataset imbalance can influence classification performance.
 - Keyword-based handcrafted features may fail to capture implicit or nuanced difficulty.
 - Model performance may vary across different competitive programming platforms.
 
