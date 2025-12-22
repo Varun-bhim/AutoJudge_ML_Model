@@ -148,8 +148,6 @@ The application will be available at:
 
 ## 🧪 Tech Stack
 
-```markdown
-## 🧪 Tech Stack
 
 - **Programming Language:** Python  
 - **Machine Learning:** Scikit-learn  
@@ -159,6 +157,8 @@ The application will be available at:
 - **Web Interface:** Streamlit  
 - **Model Persistence:** Joblib  
 
+---
+
 ## ⚠️ Known Limitations
 
 - Predictions rely solely on textual problem descriptions and do not use submission statistics or user feedback.
@@ -166,6 +166,8 @@ The application will be available at:
 - Dataset imbalance can influence classification performance.
 - Keyword-based handcrafted features may fail to capture implicit or nuanced difficulty.
 - Model performance may vary across different competitive programming platforms.
+
+---
 
 ## 🤝 Contribution
 
@@ -179,3 +181,4 @@ Please open an **issue** or submit a **pull request** for:
 
 ---
 ⭐ If you find this project useful, consider giving it a star!
+
