@@ -41,7 +41,7 @@ The system works purely on:
 
 ## 📂 Dataset Used
 
-The model was trained and evaluated using a curated dataset of competitive programming problems stored in **JSON Lines (`.jsonl`) format** (named as problems_data.jsonl) . Each entry in the dataset represents a single programming problem along with its difficulty annotations.
+The model was trained and evaluated using a curated dataset of competitive programming problems stored in **`.jsonl` format** (named as problems_data.jsonl) . Each entry in the dataset represents a single programming problem along with its difficulty annotations.
 
 ### **Dataset Contents**
 Each problem record includes the following fields:
@@ -63,8 +63,6 @@ Each problem record includes the following fields:
 - Only **textual information** is used for prediction; no user statistics, tags, or submission data are included.
 
 Note that there is an imbalance in the problems category for the above category. Presence of more Hard problems as compared to Easy and Medium makes prediction a bit challenging.
-
-This dataset forms the foundation of the AutoJudge system and enables learning difficulty patterns purely from problem statements.
 
 ---
 
