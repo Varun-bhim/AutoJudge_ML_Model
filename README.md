@@ -7,11 +7,11 @@ Indian Institute of Technology, Roorkee(IIT Roorkee)
 
 ---
 
-## 📌 Introduction
+## 📌 Project Overview
 
 AutoJudge is an intelligent Machine Learning system designed to **automatically predict the difficulty of programming problems** using only their **textual descriptions**.  
 
-Online coding platforms such as Codeforces, CodeChef, and Kattis typically rely on human judgment and post-submission statistics to assign difficulty levels. AutoJudge eliminates this dependency by leveraging **Natural Language Processing (NLP)** and **Machine Learning** to predict:
+Online coding platforms such as Codeforces, CodeChef and Kattis typically rely on human judgment and post-submission statistics to assign difficulty levels. AutoJudge eliminates this dependency by leveraging **Natural Language Processing (NLP)** and **Machine Learning** to predict:
 
 - **Problem Difficulty Class** → Easy / Medium / Hard  
 - **Problem Difficulty Score** → Numerical value  
@@ -36,6 +36,35 @@ The system works purely on:
 - Robust handling of class imbalance
 - Interactive **web-based UI** using Streamlit
 - Real-time predictions
+
+---
+
+## 📂 Dataset Used
+
+The model was trained and evaluated using a curated dataset of competitive programming problems stored in **JSON Lines (`.jsonl`) format** (named as problems_data.jsonl) . Each entry in the dataset represents a single programming problem along with its difficulty annotations.
+
+### **Dataset Contents**
+Each problem record includes the following fields:
+
+- **`description`** – Full problem statement describing the task
+- **`input_description`** – Explanation of input format and constraints
+- **`output_description`** – Explanation of expected output format
+- **`problem_class`** – Categorical difficulty label:
+  - `Easy`
+  - `Medium`
+  - `Hard`
+- **`problem_score`** – Numerical difficulty score representing relative problem hardness
+
+### **Dataset Characteristics**
+- The dataset contains problems of varying complexity, ranging from introductory to advanced algorithmic challenges.
+- Difficulty labels are provided at two levels:
+  - **Discrete classification** (Easy / Medium / Hard)
+  - **Continuous regression score** (numerical difficulty)
+- Only **textual information** is used for prediction; no user statistics, tags, or submission data are included.
+
+Note that there is an imbalance in the problems category for the above category. Presence of more Hard problems as compared to Easy and Medium makes prediction a bit challenging.
+
+This dataset forms the foundation of the AutoJudge system and enables learning difficulty patterns purely from problem statements.
 
 ---
 
@@ -135,6 +164,40 @@ streamlit run app.py
 The application will be available at:
 [http://localhost:8501]
 
+
+---
+
+## 🌐 Web Interface & Demo Video
+
+A lightweight and interactive web interface was developed using **Streamlit** to allow users to test the AutoJudge model in real time.
+
+### **Interface Overview**
+The web application provides three input fields:
+- **Problem Description** – Main problem statement
+- **Input Description** – Description of input format and constraints
+- **Output Description** – Description of expected output format
+
+These inputs replicate the exact information used by the model during training.
+
+### **Prediction Workflow**
+1. The user enters the problem details in the provided text boxes.
+2. Upon clicking the **Predict Difficulty** button:
+   - The inputs are combined into a single text block.
+   - The text undergoes the same preprocessing and feature extraction pipeline used during training.
+   - TF-IDF and handcrafted numerical features are generated.
+3. The processed input is passed to:
+   - A **classification model** to predict the difficulty class (Easy / Medium / Hard)
+   - A **regression model** to predict a numerical difficulty score
+4. The predicted results are displayed instantly on the interface.
+
+### **Output Display**
+The web interface displays:
+- **Predicted Difficulty Class** (Easy, Medium or Hard)
+- **Predicted Difficulty Score** (numerical value)
+
+This allows users to intuitively assess both the categorical and relative difficulty of a programming problem.
+
+**Link to Demo video** -  
 
 ---
 
